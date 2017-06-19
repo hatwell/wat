@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import CategorySelector from '../components/CategorySelector'
+
 class MainContainer extends React.Component {
 
 
@@ -9,6 +11,7 @@ class MainContainer extends React.Component {
       <div>
 
         <p>here's my app lol</p>
+        <CategorySelector />
       </div>
     )
 

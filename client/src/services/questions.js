@@ -8,7 +8,6 @@ class Questions {
 
   }
 
-
 //TODO sort out url generator
   getQuestions(url, callback){
     this.apiHelper.allQuestions(url, function(questions){

@@ -1,6 +1,6 @@
 var Question = function(params){
     this.category = params.category;
-    this.question = params.question.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace();
+    this.question = this.cleanString(params.question)
     this.correct_answer = params.correct_answer;
     this.incorrect_answers = params.incorrect_answers;
 
@@ -9,7 +9,7 @@ var Question = function(params){
     this.answers.push(params.correct_answer)
     this.answers = this.shuffle(this.answers);
     this.answers = this.answers.map(function(answer){
-      return answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'')
+      return this.cleanString(answer)
     }.bind(this))
 
   }
@@ -34,7 +34,17 @@ Question.prototype = {
     }
 
     return array;
+},
+
+cleanString(string){
+  string = string.replace(/&quot;/g, '\"')
+  string = string.replace(/&#039;/g, '\'')
+  string = string.replace(/&amp;/g, '&')
+  string = string.replace(/&Uuml/g, 'Ü')
+  return string
 }
+
+
 
 }
 

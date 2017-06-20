@@ -17,7 +17,7 @@ class QuestionCard extends React.Component {
         <CardTitle title={this.props.question} subtitle={this.props.category}/>
 
           <CardActions>
-            <RaisedButton label={this.props.answer1} fullWidth={true} />
+            <RaisedButton label={this.props.answer1} fullWidth={true} onTouchTap={this.handleAnswerClick} />
             <RaisedButton label={this.props.answer2} fullWidth={true} />
             <RaisedButton label={this.props.answer3} fullWidth={true} />
             <RaisedButton label={this.props.answer4} fullWidth={true} />

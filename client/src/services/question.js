@@ -1,6 +1,6 @@
 var Question = function(params){
     this.category = params.category;
-    this.question = params.question;
+    this.question = params.question.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'').replace();
     this.correct_answer = params.correct_answer;
     this.incorrect_answers = params.incorrect_answers;
 
@@ -8,6 +8,9 @@ var Question = function(params){
     this.answers = params.incorrect_answers.slice()
     this.answers.push(params.correct_answer)
     this.answers = this.shuffle(this.answers);
+    this.answers = this.answers.map(function(answer){
+      return answer.replace(/&quot;/g, '\"').replace(/&#039;/g, '\'')
+    }.bind(this))
 
   }
 

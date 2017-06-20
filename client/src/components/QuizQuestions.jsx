@@ -33,35 +33,14 @@ class QuizQuestions extends React.Component {
   componentDidMount(){
 
     this.getQuizQuestions();
-
-
-    // var url = "https://opentdb.com/api.php?amount=10&type=multiple";
-    // var request = new XMLHttpRequest()
-    // request.open('GET', url)
-    //
-    // request.setRequestHeader("Content-Type", "application/json")
-    // request.withCredentials = true
-    //
-    // request.onload = () => {
-    //   if(request.status === 200){
-    //     var data = JSON.parse(request.responseText)
-    //     console.log(data)
-    //     this.setState( { questions: data } )
-    //     } else {
-    //         return
-    //       }
-    //   }
-    // request.send();
-
   }
 
   render(){
-    console.log(this.state);
     return (
       <div>
       {
       this.state.questions.map(function(question){
-        <QuestionCard question={question} category="animals" answer1="cat" answer2="dog" answer3="lion" answer4="bear"/>
+        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} onTouchTap={this.handleAnswerClick}/>
       })
     }
       </div>

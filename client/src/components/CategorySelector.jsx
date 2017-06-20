@@ -20,7 +20,6 @@ class CategorySelector extends React.Component {
 
   constructor(props){
     var helper = new QuizRequestHelper()
-    console.log(helper);
     super(props)
     this.state = {
       categories: helper.categories
@@ -31,7 +30,6 @@ class CategorySelector extends React.Component {
        var arr = [];
 
        for (let i = 0; i < this.state.categories.length; i++) {
-         console.log("i", i, this.state.categories[i])
            arr.push(<MenuItem key={i}value={i+9} primaryText={this.state.categories[i]}></MenuItem>)
 
        }

@@ -3,6 +3,7 @@ import SelectField from 'material-ui/SelectField';
 import Paper from 'material-ui/Paper'
 import MenuItem from 'material-ui/MenuItem';
 import QuizRequestHelper from '../services/QuizRequestHelper'
+import FlatButton from 'material-ui/FlatButton'
 
 //adds support for touchTap
 var injectTapEventPlugin = require("react-tap-event-plugin");
@@ -31,7 +32,7 @@ class CategorySelector extends React.Component {
 
        for (let i = 0; i < this.state.categories.length; i++) {
          console.log("i", i, this.state.categories[i])
-           arr.push(<MenuItem value={i+9} primaryText={this.state.categories[i]}></MenuItem>)
+           arr.push(<MenuItem key={i}value={i+9} primaryText={this.state.categories[i]}></MenuItem>)
 
        }
 
@@ -56,6 +57,8 @@ class CategorySelector extends React.Component {
           }
 
           </SelectField>
+
+          <FlatButton label="select" onClick={this.props.handleSelectButtonClick}/>
 
       </Paper>
     )

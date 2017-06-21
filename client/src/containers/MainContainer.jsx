@@ -12,9 +12,8 @@ class MainContainer extends React.Component {
     return (
       <div>
 
-        <CategorySelector />
+        <CategorySelector/>
         <QuizQuestions />
-        {/* <QuestionCard question="What is the best animal?" category="animals" answer1="cat" answer2="dog" answer3="lion" answer4="bear" /> */}
 
       </div>
     )

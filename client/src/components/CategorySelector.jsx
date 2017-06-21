@@ -9,12 +9,6 @@ import FlatButton from 'material-ui/FlatButton'
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
-const style = {
-
-}
-
-
-
 class CategorySelector extends React.Component {
 
 
@@ -22,20 +16,60 @@ class CategorySelector extends React.Component {
     var helper = new QuizRequestHelper()
     super(props)
     this.state = {
-      categories: helper.categories
+      categories: helper.categories,
+      selectedIndex: ""
     }
+
+    this.handleChange = this.handleChange.bind(this)
   }
 
+//   render(){
+//
+//     return (
+//       <BoxComp selIndex={this.state.selectedIndex}   />
+//
+//
+//
+//     )
+//
+// --- in file of component
+//
+// constructor
+// super(props)
+//
+//
+//
+// const index = this.props.selIndex
+//
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
   buildOptions() {
-       var arr = [];
-
-       for (let i = 0; i < this.state.categories.length; i++) {
-           arr.push(<MenuItem key={i}value={i+9} primaryText={this.state.categories[i]}></MenuItem>)
-
-       }
-
+       var arr = this.state.categories.map(function(category, index){
+         return <MenuItem key={index} value={index+9} primaryText={category}/>
+       })
        return arr;
    }
+
+   handleChange(event){
+     //TODO this seems messy
+     var category = event.target.innerText
+    const index = this.state.categories.indexOf(category) + 9
+    console.log(index, category)
+    this.setState({ selectedIndex: index});
+
+}
 
 
   render(){
@@ -45,9 +79,9 @@ class CategorySelector extends React.Component {
       <Paper zDepth={1}>
 
           <SelectField
+            onChange={this.handleChange}
             autoWidth={true}
             maxHeight={200}
-            style = {style}
             floatingLabelText="Select a Quiz Category!">
 
             {

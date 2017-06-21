@@ -8,6 +8,7 @@ class ApiHelper {
       request.addEventListener('load', function() {
         if (request.status !== 200) return;
         var jsonString = request.responseText;
+        console.log(jsonString);
         var resultsObject = JSON.parse(jsonString);
         callback(resultsObject);
       });
@@ -15,7 +16,6 @@ class ApiHelper {
     }
 
     allQuestions(url, callback) {
-      console.log(callback)
       this.makeRequest(url, function (results) {
         var questions = this.populateQuestions(results)
         callback(questions);

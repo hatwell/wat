@@ -9,5 +9,10 @@
 }
 
 .color-highlight{
-  background-color: tomato;
+  background-color: tomato !important;
+}
+
+.question-card {
+  margin-top: 2px;
+  background-color: dodgerblue !important;
 }

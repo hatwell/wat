@@ -63,12 +63,11 @@ class QuestionsBox extends React.Component {
    handleSelectButtonClick(event){
      console.log("I was clicked")
      this.getQuizQuestions(this.state.selectedIndex)
-     this.setState()
    }
 
   render(){
 
-
+    console.log("im rendering watch me")
     return (
       <div>
         <div className="selector">
@@ -98,7 +97,7 @@ class QuestionsBox extends React.Component {
         </div>
       </div>
     )
-
+    console.log(this.state.questions)
   }
 
 

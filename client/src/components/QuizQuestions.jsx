@@ -10,16 +10,14 @@ class QuizQuestions extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {
-      questions: this.props.questions
-    }
+    // this.state = {
+    //   questions: this.props.questions
+    // }
 
     this.apiHelper = new ApiHelper()
     this.questions = new Questions();
-    // this.getQuizQuestions.bind(this)
+    this.getQuizQuestions.bind(this)
     this.handleAnswerClick = this.handleAnswerClick.bind(this)
-
-
 
   }
 
@@ -32,8 +30,11 @@ class QuizQuestions extends React.Component {
   }
 
 
-  handleAnswerClick(){
-
+  handleAnswerClick(event){
+    console.log(event.target.innerText)
+    if(event.target.innerText === this.props.correctAnswer){
+      console.log("yes! the correct answer is: ", this.props.correctAnswer)
+    }
   }
 
 
@@ -46,8 +47,9 @@ class QuizQuestions extends React.Component {
     return (
       <div>
       {
-      this.state.questions.map(function(question){
-        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} correctAnswer={question.correct_answer.toUpperCase()} backgroundColor = {null}/>
+      this.props.questions.map((question) => {
+
+        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} correctAnswer={question.correct_answer.toUpperCase()} handleAnswerClick={this.handleAnswerClick}/>
       })
     }
       </div>

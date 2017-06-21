@@ -42,6 +42,9 @@ cleanString(string){
   string = string.replace(/&amp;/g, '&')
   string = string.replace(/&Uuml/g, 'Ü')
   string = string.replace(/&ldquo;/g, '\"')
+  string = string.replace(/&rdquo;/g, '\"')
+  string = string.replace(/&deg;C/g, '°')
+
   return string
 }
 

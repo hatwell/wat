@@ -29,7 +29,7 @@ class QuestionsBox extends React.Component {
       selectedIndex: 0,
       categories: helper.categories,
       questions: [],
-      selectorValue: 9,
+      selectorValue: 10,
       correctAnswers:0
     }
     this.questions = new Questions()

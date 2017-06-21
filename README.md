@@ -4,7 +4,7 @@
 
 - Create a simple quiz app using  React, the Open Trivia Database API and Material Design
 - Users can get questions from a selection of different categories.
-- Users can see how many questions they hacve answered correctly.
+- Users can see how many questions they have answered correctly.
 
 ### Personal Aims
 - Gain a better understanding of React

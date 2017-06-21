@@ -20,7 +20,7 @@ class CategorySelector extends React.Component {
       selectedIndex: ""
     }
 
-    this.handleChange = this.handleChange.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
   }
 
 //   render(){
@@ -73,7 +73,7 @@ class CategorySelector extends React.Component {
 
 
   render(){
-    console.log(this.state)
+    // console.log(this.state)
     return (
 
       <Paper zDepth={1}>

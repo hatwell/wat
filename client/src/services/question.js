@@ -41,6 +41,7 @@ cleanString(string){
   string = string.replace(/&#039;/g, '\'')
   string = string.replace(/&amp;/g, '&')
   string = string.replace(/&Uuml/g, 'Ü')
+  string = string.replace(/&ldquo;/g, '\"')
   return string
 }
 

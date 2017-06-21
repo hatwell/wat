@@ -8,7 +8,6 @@ class ApiHelper {
       request.addEventListener('load', function() {
         if (request.status !== 200) return;
         var jsonString = request.responseText;
-        console.log(jsonString);
         var resultsObject = JSON.parse(jsonString);
         callback(resultsObject);
       });

@@ -11,12 +11,12 @@ class QuizQuestions extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      questions: []
+      questions: this.props.questions
     }
 
     this.apiHelper = new ApiHelper()
     this.questions = new Questions();
-    this.getQuizQuestions.bind(this)
+    // this.getQuizQuestions.bind(this)
     this.handleAnswerClick = this.handleAnswerClick.bind(this)
 
 
@@ -39,7 +39,7 @@ class QuizQuestions extends React.Component {
 
   componentDidMount(){
 
-    this.getQuizQuestions(12);
+    this.getQuizQuestions(this.props.categoryIndex);
   }
 
   render(){

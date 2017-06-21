@@ -49,7 +49,7 @@ class QuizQuestions extends React.Component {
       {
       this.props.questions.map((question) => {
 
-        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} correctAnswer={question.correct_answer.toUpperCase()} handleAnswerClick={this.handleAnswerClick}/>
+        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} correctAnswer={question.correct_answer.toUpperCase()} log={console.log(question.correct_answer)} handleAnswerClick={this.handleAnswerClick}/>
       })
     }
       </div>

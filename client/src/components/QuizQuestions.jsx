@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Question from '../services/Question'
 import Questions from '../services/Questions'
-import ApiHelper from '../services/ApiHelper'
+import ApiHelper from '../services/apiHelper'
 import QuestionCard from '../components/QuestionCard'
 
 
@@ -9,10 +9,13 @@ import QuestionCard from '../components/QuestionCard'
 class QuizQuestions extends React.Component {
 
   constructor(props){
+
     super(props)
-    // this.state = {
-    //   questions: this.props.questions
-    // }
+
+    this.state = {
+      questions: this.props.questions,
+      questionAnswerCorrectly: []
+    }
 
     this.apiHelper = new ApiHelper()
     this.questions = new Questions();
@@ -31,9 +34,10 @@ class QuizQuestions extends React.Component {
 
 
   handleAnswerClick(event){
-    console.log(event.target.innerText)
+
     if(event.target.innerText === this.props.correctAnswer){
-      console.log("yes! the correct answer is: ", this.props.correctAnswer)
+      this.state.questionAnswerCorrectly.push(this.props.myIndex)
+
     }
   }
 
@@ -44,12 +48,22 @@ class QuizQuestions extends React.Component {
   }
 
   render(){
+    console.log(this.state)
+
     return (
       <div>
       {
-      this.props.questions.map((question) => {
-
-        return <QuestionCard question={question.question} category={question.category} answer1={question.answers[0]} answer2={question.answers[1]} answer3={question.answers[2]} answer4={question.answers[3]} correctAnswer={question.correct_answer.toUpperCase()} log={console.log(question.correct_answer)} handleAnswerClick={this.handleAnswerClick}/>
+      this.props.questions.map((question, index) => {
+        // console.log(question, index)
+        return <QuestionCard question={question.question}
+                myindex={index}
+                category={question.category}
+                answer1={question.answers[0]}
+                answer2={question.answers[1]}
+                answer3={question.answers[2]}
+                answer4={question.answers[3]}
+                correctAnswer={question.correct_answer.toUpperCase()}
+                handleAnswerClick={this.props.handleAnswerClick}/>
       })
     }
       </div>

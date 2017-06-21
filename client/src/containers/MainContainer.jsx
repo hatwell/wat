@@ -13,9 +13,6 @@ class MainContainer extends React.Component {
     return (
       <div>
         <QuestionsBox />
-        {/* <CategorySelector/>
-        <QuizQuestions /> */}
-
       </div>
     )
 

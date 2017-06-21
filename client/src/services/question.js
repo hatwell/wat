@@ -44,6 +44,8 @@ cleanString(string){
   string = string.replace(/&ldquo;/g, '\"')
   string = string.replace(/&rdquo;/g, '\"')
   string = string.replace(/&deg;C/g, '°')
+  string = string.replace(/&eactute;/g, 'é')
+
 
   return string
 }

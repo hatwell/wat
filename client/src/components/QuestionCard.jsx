@@ -8,6 +8,13 @@ class QuestionCard extends React.Component {
   constructor(props){
     super(props)
 
+  this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
+
+  }
+
+  handleAnswerSelected(event){
+    this.props.handleAnswerClick(event, this.props.correctAnswer)
+
   }
 
   render(){
@@ -16,10 +23,10 @@ class QuestionCard extends React.Component {
         <CardTitle title={this.props.question} subtitle={this.props.category}/>
 
           <CardActions>
-            <RaisedButton label={this.props.answer1} fullWidth={true} onTouchTap={this.props.handleAnswerClick} />
-            <RaisedButton label={this.props.answer2} fullWidth={true} onTouchTap={this.props.handleAnswerClick} />
-            <RaisedButton label={this.props.answer3} fullWidth={true} onTouchTap={this.props.handleAnswerClick} />
-            <RaisedButton label={this.props.answer4} fullWidth={true} onTouchTap={this.props.handleAnswerClick} />
+            <RaisedButton label={this.props.answer1} fullWidth={true} onTouchTap={this.handleAnswerSelected} />
+            <RaisedButton label={this.props.answer2} fullWidth={true} onTouchTap={this.handleAnswerSelected} />
+            <RaisedButton label={this.props.answer3} fullWidth={true} onTouchTap={this.handleAnswerSelected} />
+            <RaisedButton label={this.props.answer4} fullWidth={true} onTouchTap={this.handleAnswerSelected} />
           </CardActions>
 
       </Card>

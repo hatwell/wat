@@ -8,13 +8,33 @@
 
 }
 
+body {
+  background-image: url('/assets/images/gplaypattern.png');
+}
+
+
 .color-highlight{
-  background-color: tomato !important;
+  background-color: dodgerblue  !important;
+}
+
+.category-selector{
+  margin-left: 10px !important;
 }
 
 .question-card {
   margin-top: 2px;
-  background-color: dodgerblue !important;
+}
+
+.quiz-button{
+  margin: 5px !important;
+}
+
+.questions{
+
+}
+
+.sticky-section{
+
 }
 
 .material-icons {
